@@ -52,4 +52,3 @@ if __name__ == "__main__":
 
     print(round(r2_sqr, 3))
 
-

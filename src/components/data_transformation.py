@@ -1,4 +1,4 @@
-import os, sys , pandas as pd , numpy as np  
+import os, sys , pandas as pd , numpy as np  , pickle
 from src.exception import CustomException
 from src.logger import logging
 from sklearn.model_selection import train_test_split
@@ -11,7 +11,7 @@ from src.utils import save_object
 
 @dataclass 
 class DataTransformationConfig :
-    preprocessor_obj_file_path =os.path.join('artifacts','presprocessor.pkl')
+    preprocessor_obj_file_path =os.path.join('artifacts','preprocessor.pkl')
 
 class DataTransformation:
     def __init__(self):

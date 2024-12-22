@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
 from src.components.data_transformation import DataTransformation, DataTransformationConfig
+from src.components.model_trainer import modeltrainerconfig, ModelTrainer
 
 @dataclass
 class DataIngestionConfig:
@@ -45,4 +46,10 @@ if __name__ == "__main__":
 
     data_transformation=DataTransformation()
     train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
+
+    modelTrainer_obj =ModelTrainer()
+    r2_sqr = modelTrainer_obj.initiate_model_trainer(train_arr,test_arr) 
+
+    print(round(r2_sqr, 3))
+
 
